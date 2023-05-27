@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>Login || Simple Crypto Wallet</title>
+    <link rel="stylesheet" type="text/css" href="style.css" title="ltr">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/logo_single.png" type="image/x-icon">
+    <link rel="shortcut icon" type="image/png" href="../img/logo_single.png" />
+    <style data-jss="" data-meta="MuiInputBase">
+        @-webkit-keyframes mui-auto-fill {}
+
+        @-webkit-keyframes mui-auto-fill-cancel {}
+
+        .MuiInputBase-root {
+            color: rgba(0, 0, 0, 0.87);
+            cursor: text;
+            display: inline-flex;
+            position: relative;
+            font-size: 1rem;
+            box-sizing: border-box;
+            align-items: center;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.1876em;
+            letter-spacing: 0.00938em;
+        }
+
+        .MuiInputBase-root.Mui-disabled {
+            color: rgba(0, 0, 0, 0.38);
+            cursor: default;
+        }
+
+        .MuiInputBase-multiline {
+            padding: 6px 0 7px;
+        }
+
+        .MuiInputBase-multiline.MuiInputBase-marginDense {
+            padding-top: 3px;
+        }
+
+        .MuiInputBase-fullWidth {
+            width: 100%;
+        }
+
+        .MuiInputBase-input {
+            font: inherit;
+            color: currentColor;
+            width: 100%;
+            border: 0;
+            height: 1.1876em;
+            margin: 0;
+            display: block;
+            padding: 6px 0 7px;
+            min-width: 0;
+            background: none;
+            box-sizing: content-box;
+            animation-name: mui-auto-fill-cancel;
+            letter-spacing: inherit;
+            animation-duration: 10ms;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .MuiInputBase-input::-webkit-input-placeholder {
+            color: currentColor;
+            opacity: 0.42;
+            transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        .MuiInputBase-input::-moz-placeholder {
+            color: currentColor;
+            opacity: 0.42;
+            transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        .MuiInputBase-input:-ms-input-placeholder {
+            color: currentColor;
+            opacity: 0.42;
+            transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        .MuiInputBase-input::-ms-input-placeholder {
+            color: currentColor;
+            opacity: 0.42;
+            transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        .MuiInputBase-input:focus {
+            outline: 0;
+        }
+
+        .MuiInputBase-input:invalid {
+            box-shadow: none;
+        }
+
+        .MuiInputBase-input::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        .MuiInputBase-input.Mui-disabled {
+            opacity: 1;
+        }
+
+        .MuiInputBase-input:-webkit-autofill {
+            animation-name: mui-auto-fill;
+            animation-duration: 5000s;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input::-webkit-input-placeholder {
+            opacity: 0 !important;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input::-moz-placeholder {
+            opacity: 0 !important;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input:-ms-input-placeholder {
+            opacity: 0 !important;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input::-ms-input-placeholder {
+            opacity: 0 !important;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input:focus::-webkit-input-placeholder {
+            opacity: 0.42;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input:focus::-moz-placeholder {
+            opacity: 0.42;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input:focus:-ms-input-placeholder {
+            opacity: 0.42;
+        }
+
+        label[data-shrink=false]+.MuiInputBase-formControl .MuiInputBase-input:focus::-ms-input-placeholder {
+            opacity: 0.42;
+        }
+
+        .MuiInputBase-inputMarginDense {
+            padding-top: 3px;
+        }
+
+        .MuiInputBase-inputMultiline {
+            height: auto;
+            resize: none;
+            padding: 0;
+        }
+
+        .MuiInputBase-inputTypeSearch {
+            -moz-appearance: textfield;
+            -webkit-appearance: textfield;
+        }
+    </style>
+    <style data-jss="" data-meta="MuiInput">
+        .MuiInput-root {
+            position: relative;
+        }
+
+        label+.MuiInput-formControl {
+            margin-top: 16px;
+        }
+
+        .MuiInput-colorSecondary.MuiInput-underline:after {
+            border-bottom-color: #f50057;
+        }
+
+        .MuiInput-underline:after {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            position: absolute;
+            transform: scaleX(0);
+            transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+            border-bottom: 2px solid #3f51b5;
+            pointer-events: none;
+        }
+
+        .MuiInput-underline.Mui-focused:after {
+            transform: scaleX(1);
+        }
+
+        .MuiInput-underline.Mui-error:after {
+            transform: scaleX(1);
+            border-bottom-color: #f44336;
+        }
+
+        .MuiInput-underline:before {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "\00a0";
+            position: absolute;
+            transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+            pointer-events: none;
+        }
+
+        .MuiInput-underline:hover:not(.Mui-disabled):before {
+            border-bottom: 2px solid rgba(0, 0, 0, 0.87);
+        }
+
+        .MuiInput-underline.Mui-disabled:before {
+            border-bottom-style: dotted;
+        }
+
+        @media (hover: none) {
+            .MuiInput-underline:hover:not(.Mui-disabled):before {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+            }
+        }
+    </style>
+    <style data-jss="" data-meta="MuiFormLabel">
+        .MuiFormLabel-root {
+            color: rgba(0, 0, 0, 0.54);
+            padding: 0;
+            font-size: 1rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 0.00938em;
+        }
+
+        .MuiFormLabel-root.Mui-focused {
+            color: #3f51b5;
+        }
+
+        .MuiFormLabel-root.Mui-disabled {
+            color: rgba(0, 0, 0, 0.38);
+        }
+
+        .MuiFormLabel-root.Mui-error {
+            color: #f44336;
+        }
+
+        .MuiFormLabel-colorSecondary.Mui-focused {
+            color: #f50057;
+        }
+
+        .MuiFormLabel-asterisk.Mui-error {
+            color: #f44336;
+        }
+    </style>
+    <style data-jss="" data-meta="MuiInputLabel">
+        .MuiInputLabel-root {
+            display: block;
+            transform-origin: top left;
+        }
+
+        .MuiInputLabel-formControl {
+            top: 0;
+            left: 0;
+            position: absolute;
+            transform: translate(0, 24px) scale(1);
+        }
+
+        .MuiInputLabel-marginDense {
+            transform: translate(0, 21px) scale(1);
+        }
+
+        .MuiInputLabel-shrink {
+            transform: translate(0, 1.5px) scale(0.75);
+            transform-origin: top left;
+        }
+
+        .MuiInputLabel-animated {
+            transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+        }
+
+        .MuiInputLabel-filled {
+            z-index: 1;
+            transform: translate(12px, 20px) scale(1);
+            pointer-events: none;
+        }
+
+        .MuiInputLabel-filled.MuiInputLabel-marginDense {
+            transform: translate(12px, 17px) scale(1);
+        }
+
+        .MuiInputLabel-filled.MuiInputLabel-shrink {
+            transform: translate(12px, 10px) scale(0.75);
+        }
+
+        .MuiInputLabel-filled.MuiInputLabel-shrink.MuiInputLabel-marginDense {
+            transform: translate(12px, 7px) scale(0.75);
+        }
+
+        .MuiInputLabel-outlined {
+            z-index: 1;
+            transform: translate(14px, 20px) scale(1);
+            pointer-events: none;
+        }
+
+        .MuiInputLabel-outlined.MuiInputLabel-marginDense {
+            transform: translate(14px, 12px) scale(1);
+        }
+
+        .MuiInputLabel-outlined.MuiInputLabel-shrink {
+            transform: translate(14px, -6px) scale(0.75);
+        }
+    </style>
+    <style data-jss="" data-meta="MuiFormControl">
+        .MuiFormControl-root {
+            border: 0;
+            margin: 0;
+            display: inline-flex;
+            padding: 0;
+            position: relative;
+            min-width: 0;
+            flex-direction: column;
+            vertical-align: top;
+        }
+
+        .MuiFormControl-marginNormal {
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        .MuiFormControl-marginDense {
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+
+        .MuiFormControl-fullWidth {
+            width: 100%;
+        }
+    </style>
+    <style data-jss="" data-meta="makeStyles">
+        .jss1 {
+            color: var(--color-text-alternative);
+            font-weight: 400;
+        }
+
+        .jss1.jss2 {
+            color: var(--color-text-alternative);
+        }
+
+        .jss1.jss4 {
+            color: var(--color-text-alternative);
+        }
+
+        .jss3:before {
+            border-bottom: 1px solid var(--color-text-default) !important;
+        }
+
+        .jss3:after {
+            border-bottom: 2px solid var(--color-primary-default);
+        }
+
+        .jss5 {
+            color: var(--color-text-alternative);
+        }
+
+        .jss6 {
+            padding: 8px;
+        }
+
+        .jss6::placeholder {
+            color: var(--color-text-alternative);
+        }
+
+        .jss7 {
+            color: var(--color-background-default);
+        }
+
+        .jss8:after {
+            border-bottom: 2px solid var(--color-background-default);
+        }
+
+        .jss9.jss10 {
+            color: var(--color-text-alternative);
+        }
+
+        .jss9.jss4 {
+            color: var(--color-text-alternative);
+        }
+
+        .jss12 {
+            color: var(--color-text-default);
+            border: 1px solid var(--color-border-default);
+            height: 48px;
+            display: flex;
+            padding: 0 16px;
+            align-items: center;
+            border-radius: 6px;
+            background-color: var(--color-background-default);
+        }
+
+        label+.jss12 {
+            margin-top: 9px;
+        }
+
+        .jss12.jss11 {
+            border: 1px solid var(--color-primary-default);
+        }
+
+        .jss13 {
+            color: var(--color-text-default);
+            position: initial;
+            font-size: 1rem;
+            transform: none;
+            transition: none;
+        }
+
+        .jss14 {
+            color: var(--color-text-default);
+            position: initial;
+            font-size: .75rem;
+            transform: none;
+            transition: none;
+        }
+
+        .jss15 {
+            line-height: initial !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app-content">
+        <div class="app os-win mouse-user-styles">
+            <div class="app-header">
+                <div class="app-header__contents">
+                    <div class="app-header__logo-container app-header__logo-container--clickable">
+                        <a href="/">
+                            <img src="../img/logo.png" width="200px" height="40px" alt="Simple Crypto Wallet logotype">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="main-container-wrapper">
+                <div class="unlock-page__container">
+                    <div class="unlock-page">
+                        <div class="unlock-page__mascot-container">
+                            <div style="z-index: 0;">
+                                <img src="../img/logo_single.png" width="120px" height="120px" alt="Simple Crypto Wallet logotype">
+                            </div>
+                        </div>
+                        <h1 class="unlock-page__title">Welcome Back!</h1>
+                        <div>The decentralized web awaits</div>
+                        <form>                            
+                            <div class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth">
+                                <!-- <label
+                                    class="MuiFormLabel-root MuiInputLabel-root jss1 MuiInputLabel-formControl MuiInputLabel-animated"
+                                    data-shrink="false" for="username" id="username-label">
+                                    Username
+                                </label> -->
+                                <div
+                                    class="MuiInputBase-root MuiInput-root MuiInput-underline jss3 MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl">
+                                    <input placeholder="User Name" id="username" type="text"
+                                        dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                                </div>
+                            </div>
+                            <div class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth">
+                                <!-- <label
+                                    class="MuiFormLabel-root MuiInputLabel-root jss1 MuiInputLabel-formControl MuiInputLabel-animated"
+                                    data-shrink="false" for="password" id="password-label">
+                                    Password
+                                </label> -->
+                                <div
+                                    class="MuiInputBase-root MuiInput-root MuiInput-underline jss3 MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl">
+                                    <input placeholder="Password"  aria-invalid="false" id="pwd" type="password" dir="auto"
+                                        class="MuiInputBase-input MuiInput-input" value="">
+                                </div>                                
+                            </div>
+                            <div id="submitdiv">
+                                
+                            </div>
+                        </form>
+                        <button 
+                             
+                            onclick="loginnew();" 
+                            class="button btn--rounded btn-primary"  
+                            role="button" 
+                            tabindex="0"
+                            id="sigin"
+                            style="background-color: var(--color-primary-default); color: var(--color-primary-inverse); margin-top: 20px; height: 60px; font-weight: 400; box-shadow: none; border-radius: 100px;">
+                            Sign In
+                        </button>
+                        <div class="unlock-page__links">
+                            <a class="button btn-link unlock-page__link" role="button" tabindex="0">
+                                Forgot password?
+                            </a>
+                        </div>
+                        <div class="unlock-page__support">
+                            <span> Don't have an account?
+                                <a href="../register/" target="_blank" rel="noopener noreferrer">
+                                    Register
+                                </a> 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function loginnew() {
+
+                
+                let un = $('#username').val();
+                let pwd = $('#pwd').val();
+                
+                if (un.length === 0 || pwd.length === 0) {
+                    document.getElementById('submitdiv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Fill all fields!!!</p>";
+                    return;
+                }
+                
+                $("#sigin").html('<span class="">Submiting...</span>');
+                $.ajax({
+                    url: '../data/login.php',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        un: un,
+                        pwd: pwd,
+                    },
+                    
+                     success:function(response){
+                        if(response.stat === "good"){
+                            document.getElementById('submitdiv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Welcome to Simple Crypto Wallet</p>";
+                            $("#sigin").html('Success');
+                            setTimeout(function () {
+                                window.location.href='/secure/';
+                            }, 3000);
+                        }
+                        if(response.stat === "inactive"){
+                            document.getElementById('submitdiv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>An E-mail was sent to you, check your inbox, in order to activate your account!!!!!!</p>";
+                            $("#sigin").html('Error');
+                        }
+                        if(response.stat === "blocked"){
+                            document.getElementById('submitdiv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Your Account has been restricted due to compliance with an ongoing investigation. Thank You</p>";
+                            $("#sigin").html('Error');
+                        }
+                        if(response.stat === "false"){
+                            document.getElementById('submitdiv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Invalid Email or Password!</p>";
+                            $("#sigin").html('Error');
+                        }
+                    } 
+                });
+            
+        }
+        
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+        }
+        
+        $(function () {
+            if (/[?&]token=/.test(location.search)) {
+                $("#btn-login").html('<span class=""><i class="fa fa-circle-o-notch fa-spin"></i>Verifying Email..</span>');
+                verifyActivation();
+            }
+        });
+        
+        function verifyActivation() {
+            let token = getURLParameter("token");
+            let data;
+            $.ajax({
+                url: '../data/login.php',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    token: token
+                },
+                success: function (res) {
+                    if (res.valid === true) {
+                        document.getElementById('submitdiv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Email Verified Successfully!!!</p>";
+                        $("#username").val(res.email);
+                        $("#pwd").focus();
+                        $("#sigin").html('Continue');
+                    } else if (res.valid === false) {
+                        document.getElementById('submitdiv').innerHTML = "<p class='MuiFormHelperText-root Mui-error MuiFormHelperText-filled' id='password-helper-text'>Invalid token!!!</p>";
+                        $("#sigin").html('Continue');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

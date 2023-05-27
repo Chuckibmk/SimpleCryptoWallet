@@ -1,0 +1,3 @@
+[30-Jan-2023 19:46:34 UTC] PHP Notice:  Undefined variable: cname in /home/nnqm18rhsmfw/public_html/data/mail/verifymail.phtml on line 8
+[30-Jan-2023 19:46:34 UTC] PHP Notice:  Undefined variable: url in /home/nnqm18rhsmfw/public_html/data/mail/verifymail.phtml on line 120
+[30-Jan-2023 19:46:34 UTC] PHP Notice:  Undefined variable: url in /home/nnqm18rhsmfw/public_html/data/mail/verifymail.phtml on line 134
