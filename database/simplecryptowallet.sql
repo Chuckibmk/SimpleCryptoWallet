@@ -222,9 +222,6 @@ CREATE TABLE `send` (
 --
 
 INSERT INTO `send` (`id`, `uid`, `trans_id`, `network`, `coin`, `amount`, `dolval`, `gasfee`, `address`, `status`, `time`, `last_updated`) VALUES
-(2, 1, '', 'ETH', 'ETH', '0.18', '', '0.0018', '0x476d20c5F4bbbe237Ec8c096251F0dE0B0370bd0', 'true', '1677009306', '1677009306'),
-(3, 1, '', 'ETH', 'ETH', '0.4', '659', '0.004', '0x476d20c5F4bbbe237Ec8c096251F0dE0B0370bd0', 'true', '1678524925', '1678524925'),
-(4, 1, '', 'ETH', 'ETH', '0.98304789', '', '', '0xc5cc645734785c1aecb508ce059e2ccb785596bb', 'true', '1680561169', '1680561169'),
 (5, 1, '', 'BTC', 'BTC', '0.03515025', '', '', '1PsREGshEASH8n583uLT1BGXuLLV39ek2o', 'true', '1680562662', '1680562662');
 
 -- --------------------------------------------------------
