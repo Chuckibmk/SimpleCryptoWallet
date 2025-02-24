@@ -94,15 +94,3 @@ if(isset($_SESSION['COIN'])){
 
 ////////////////////////////////////standard///////////////////////////////////////////////////
 
-// $userData['lastDeposit'] = number_format((float)$user->lastDeposit($uID)['amount'], 2, '.', '');
-// $userData['lastPendingDeposit'] = number_format((float)$user->lastPendingDeposit($uID)['amount'], 2, '.', '');
-// $userData['totalBal'] = number_format((float)$user->totalBal($uID)['total'], 2, '.', '');
-// $userData['totalWithdrawal'] = number_format((float)$user->totalWithdrawal($uID)['total'], 2, '.', '');
-// $userData['lastWithdrawal'] = number_format((float)$user->lastWithdrawal($uID)['value'], 2, '.', '');
-// $userData['deposits'] = $user->getDepositRequest($uID);
-
-// $userData['allDeposit'] = $user->allDeposit($uID);
-// $userData['withdrawals'] = $user->getWithdrawals($uID);
-// $userData['pendingW'] = number_format((float)$user->getPendingWithdrawals($uID)['total'], 2, '.', '');
-// $userData['withdrawalsConfirmed'] = $user->getWithdrawalsConfirmed($uID);
-// $userData['notify'] = $user->notify($uID);
