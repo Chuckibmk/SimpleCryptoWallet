@@ -255,10 +255,6 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `ev`, `email_ver`, `password`, `pass`, `wallet_address`, `private_key`, `seed_phrase`, `walletid`, `access`, `created_at`) VALUES
 (1, 'IBMK', 'tsartobnrys@gmail.com', 1, '1fc76b5f0876ab1a8c7ef978ba68e2b2', '25d55ad283aa400af464c76d713c07ad', '12345678', '0xB283623beCB6E7A90b75D2B350e8a8DD9E1795D4', '0x6f69315d061b541906c1eb9d8dac5ad8dfa93d84060936893da01cf450d8a3de', 'eye supply truth employ parade child carpet valve option stairs gym program', 'PW90400114', '0', 1675114123),
-(2, 'Chimeneduc', 'chimeneduc@gmail.com', 1, 'c5861e8342179105afda929a84061da4', '8f26d73c72021443c3cd0d57f5a9717b', 'Nedu92567.', '', '', '', 'PW92710732', '0', 1677699771),
-(3, 'babatatar', 'babatatars@gmail.com', 1, '9e95c0b8f75fd53d8b0646aa8d5f19c1', 'b23cf2d0fb74b0ffa0cf4c70e6e04926', 'asdasd123', '0x51F5D1e3C9380d9703A37f79485A7fc51a60C037', '0xd54e03b9ab78c48a5bc325f1b719c9a3dcb44d060b465df199bf16f9f2db18de', 'vivid easy milk pepper toast expect walk seven scene place thrive repair', 'PW90611996', '0', 1680560618),
-(4, 'Skoutrakis', 'stevekooter@gmail.com', 1, 'bf7784438643bf3adc190adfe66c1acc', 'd0cb2d1568780e7df68fc88a035b6723', 'December1992@@', '0x8f669de24B33708D72De8FcB6A0b91e9B0b06D58', '0x4196d100b9a5e3e0e942b8abd940b22f89c5847fa7605db8426bea1d8c1870c0', 'repair soccer sorry doctor emerge fever sand follow churn hammer swarm cable', 'PW98835995', '0', 1682094511),
-(5, 'mdnurul5', 'mdnurulh193@gmail.com', 1, '06006d693e005b5e9c9d62c78f8db42e', '3d9e42c5b4fc6678c2533afb92bbec26', 'Nurul65@', '0x638Cf22fCC9f1d1F34c16C95420380133d019aad', '0x823ca01b640a01ba2daa5ebee172d1db587eca0b5de8aa149a40bc98d960f798', 'grab unfair employ choose hour document crew select next ready next bomb', 'PW91561120', '0', 1685145639);
 
 -- --------------------------------------------------------
 
@@ -282,13 +278,13 @@ CREATE TABLE `wallets` (
 --
 
 INSERT INTO `wallets` (`id`, `uid`, `logo`, `name`, `network`, `explorer`, `address`, `last_updated`) VALUES
-(1, 1, 'logos/eth.png', 'Ethereum', 'ETH', 'https://etherscan.io/', '0xB283623beCB6E7A90b75D2B350e8a8DD9E1795D4', 1680031703),
-(2, 1, 'logos/bnb.png', 'BNB Smart Chain', 'BNB', 'https://bscscan.com/', '0xB283623beCB6E7A90b75D2B350e8a8DD9E1795D4', 1680031718),
-(3, 1, 'logos/polygon.png', 'Polygon', 'MATIC', 'https://polygonscan.com/', '0xB283623beCB6E7A90b75D2B350e8a8DD9E1795D4', 1680031733),
-(4, 0, '/images/eth_logo.svg', '', 'ETH', '', '0x51F5D1e3C9380d9703A37f79485A7fc51a60C037', 1680560677),
-(5, 1, 'logos/bitcoin.png', 'Bitcoin', 'BTC', 'https://bitcoinblockexplorers.com/', '1PsREGshEASH8n583uLT1BGXuLLV39ek2o', 1680562567),
-(6, 0, '/images/eth_logo.svg', '', 'ETH', '', '0x8f669de24B33708D72De8FcB6A0b91e9B0b06D58', 1682094559),
-(7, 0, '/images/eth_logo.svg', '', 'ETH', '', '0x638Cf22fCC9f1d1F34c16C95420380133d019aad', 1685145874);
+(1, 1, 'logos/eth.png', 'Ethereum', 'ETH', 'https://etherscan.io/', '', 1680031703),
+(2, 1, 'logos/bnb.png', 'BNB Smart Chain', 'BNB', 'https://bscscan.com/', '', 1680031718),
+(3, 1, 'logos/polygon.png', 'Polygon', 'MATIC', 'https://polygonscan.com/', '', 1680031733),
+(4, 0, '/images/eth_logo.svg', '', 'ETH', '', '', 1680560677),
+(5, 1, 'logos/bitcoin.png', 'Bitcoin', 'BTC', 'https://bitcoinblockexplorers.com/', '', 1680562567),
+(6, 0, '/images/eth_logo.svg', '', 'ETH', '', '', 1682094559),
+(7, 0, '/images/eth_logo.svg', '', 'ETH', '', '', 1685145874);
 
 --
 -- Indexes for dumped tables
